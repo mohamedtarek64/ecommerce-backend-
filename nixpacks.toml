@@ -2,18 +2,19 @@
 nixPkgs = ['php81', 'php81Packages.composer']
 
 [phases.install]
-cmds = ['composer install --no-dev --optimize-autoloader']
-
-[phases.build]
 cmds = [
   'mkdir -p storage/logs',
   'mkdir -p storage/framework/cache',
   'mkdir -p storage/framework/sessions',
   'mkdir -p storage/framework/views',
   'mkdir -p bootstrap/cache',
-  'chmod -R 755 storage',
-  'chmod -R 755 bootstrap/cache'
+  'chmod -R 777 storage',
+  'chmod -R 777 bootstrap/cache',
+  'composer install --no-dev --optimize-autoloader'
 ]
+
+[phases.build]
+cmds = []
 
 [start]
 cmd = 'php artisan config:clear && php artisan cache:clear && php artisan migrate --force && exec php -S 0.0.0.0:${PORT:-8000} -t public'
