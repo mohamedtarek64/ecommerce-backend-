@@ -33,21 +33,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy composer files
-COPY composer.json composer.lock ./
-
-# Install dependencies (without dev dependencies for production)
-RUN composer install --no-dev --optimize-autoloader --no-scripts
-# Remove any collision references and regenerate autoload
-RUN composer dump-autoload --optimize
-
-# Copy application code
+# Copy application code first
 COPY . .
 
-# Reinstall dependencies to ensure clean state
-RUN rm -rf vendor
-RUN composer install --no-dev --optimize-autoloader --no-scripts
-RUN composer dump-autoload --optimize
+# Install dependencies (without dev dependencies for production)
+RUN composer install --no-dev --optimize-autoloader
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www \
