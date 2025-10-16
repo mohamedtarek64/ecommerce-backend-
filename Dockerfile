@@ -38,9 +38,16 @@ COPY composer.json composer.lock ./
 
 # Install dependencies (without dev dependencies for production)
 RUN composer install --no-dev --optimize-autoloader --no-scripts
+# Remove any collision references and regenerate autoload
+RUN composer dump-autoload --optimize
 
 # Copy application code
 COPY . .
+
+# Reinstall dependencies to ensure clean state
+RUN rm -rf vendor
+RUN composer install --no-dev --optimize-autoloader --no-scripts
+RUN composer dump-autoload --optimize
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www \
@@ -57,10 +64,15 @@ RUN mkdir -p /var/www/storage/logs \
     && mkdir -p /var/www/storage/framework/views \
     && mkdir -p /var/www/bootstrap/cache
 
-# Skip cache commands to avoid build issues
+# Clear all caches to avoid collision issues
+RUN rm -rf /var/www/bootstrap/cache/*.php || true
+RUN php artisan config:clear || true
+RUN php artisan cache:clear || true
+RUN php artisan route:clear || true
+RUN php artisan view:clear || true
 
 # Expose port
 EXPOSE 8000
 
 # Start the application with migrations
-CMD ["sh", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
+CMD ["sh", "-c", "php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
