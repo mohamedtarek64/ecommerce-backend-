@@ -11,10 +11,20 @@ RUN apk add --no-cache \
     unzip \
     mysql-client \
     nodejs \
-    npm
+    npm \
+    oniguruma-dev \
+    autoconf \
+    g++ \
+    make \
+    libc-dev \
+    pkgconfig \
+    freetype-dev \
+    libjpeg-turbo-dev \
+    libwebp-dev
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -39,10 +49,7 @@ RUN chown -R www-data:www-data /var/www \
 # Generate application key if not exists
 RUN php artisan key:generate --force || true
 
-# Cache configuration (skip if collision not available)
-RUN php artisan config:cache || echo "Config cache skipped" \
-    && php artisan route:cache || echo "Route cache skipped" \
-    && php artisan view:cache || echo "View cache skipped"
+# Skip cache commands to avoid build issues
 
 # Expose port
 EXPOSE 8000
