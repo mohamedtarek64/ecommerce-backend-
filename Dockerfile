@@ -50,10 +50,17 @@ RUN chown -R www-data:www-data /var/www \
 # Generate application key if not exists
 RUN php artisan key:generate --force || true
 
+# Create storage and cache directories
+RUN mkdir -p /var/www/storage/logs \
+    && mkdir -p /var/www/storage/framework/cache \
+    && mkdir -p /var/www/storage/framework/sessions \
+    && mkdir -p /var/www/storage/framework/views \
+    && mkdir -p /var/www/bootstrap/cache
+
 # Skip cache commands to avoid build issues
 
 # Expose port
 EXPOSE 8000
 
-# Start the application
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# Start the application with migrations
+CMD ["sh", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
