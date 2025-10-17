@@ -80,7 +80,7 @@ class RealProductsSeeder extends Seeder
   array (
     'name' => 'FuelCell Rebel v5',
     'slug' => NULL,
-    'sku' => 'SKU-68f29890aa220',
+    'sku' => 'SKU-68f2997c4543c',
     'description' => 'New Balance FuelCell Rebel v5 running shoes - lightweight and responsive for fast-paced runs.',
     'price' => '140.00',
     'original_price' => NULL,
@@ -167,7 +167,7 @@ class RealProductsSeeder extends Seeder
   array (
     'name' => 'Gazelle Indoor Shoes',
     'slug' => NULL,
-    'sku' => 'SKU-68f29890aa22f',
+    'sku' => 'SKU-68f2997c4544c',
     'description' => 'Adidas Gazelle Indoor Shoes for women - classic indoor sports design with Sand Strata Preloved Brown Gum colorway.',
     'price' => '95.00',
     'original_price' => NULL,
@@ -193,14 +193,14 @@ class RealProductsSeeder extends Seeder
     'updated_at' => '2025-10-16 09:49:24',
   ),
 );
-
-        // Products Kids Data (6 products)
-        $productsKids = array (
+        
+        // Products Men Data (6 products)
+        $productsMen = array (
   0 => 
   array (
     'name' => 'Made in USA 990v6',
     'slug' => NULL,
-    'sku' => 'SKU-68f29890aa237',
+    'sku' => 'SKU-68f2997c45456',
     'description' => 'The New Balance 990v6 is a premium lifestyle sneaker that combines classic design with modern comfort. Made in USA with superior craftsmanship, featuring grey and white colorway. Built with premium suede and mesh upper, ENCAP midsole technology for superior cushioning and support.',
     'price' => '185.00',
     'original_price' => NULL,
@@ -345,7 +345,7 @@ class RealProductsSeeder extends Seeder
   array (
     'name' => 'Campus 00s Shoes',
     'slug' => NULL,
-    'sku' => 'SKU-68f29890aa242',
+    'sku' => 'SKU-68f2997c45461',
     'description' => 'The Campus 00s Shoes deliver a fresh take on a classic design. With premium materials and contemporary styling, these shoes offer both comfort and style for everyday wear.',
     'price' => '85.00',
     'original_price' => NULL,
@@ -371,7 +371,214 @@ class RealProductsSeeder extends Seeder
     'updated_at' => '2025-10-16 13:12:01',
   ),
 );
-
+        
+        // Products Kids Data (7 products)
+        $productsKids = array (
+  0 => 
+  array (
+    'name' => 'Chuck Taylor All Star EVA Lift Platform Canvas High Top',
+    'slug' => 'chuck-taylor-all-star-eva-lift-platform-canvas-high-top-kids-sugar-berry',
+    'sku' => 'CONV-A11832C-KIDS',
+    'description' => 'Your little one will love these Chuck Taylor All Star EVA Lift Platform Canvas High Tops in Sugar Berry. Featuring a lightweight EVA platform sole and the classic Converse style, these high-tops are perfect for active kids who want to stand out.',
+    'price' => '55.00',
+    'original_price' => '65.00',
+    'old_price' => '65.00',
+    'category' => 'lifestyle',
+    'subcategory' => 'sneakers',
+    'brand' => 'Converse',
+    'image_url' => 'https://converse.ca/cdn/shop/files/A11832C_A11832C_A_107X1_1e67a444-0cdd-4072-9a90-d538c718b57c.jpg?v=1754130671&width=1200',
+    'images' => '["https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_A_107X1_1e67a444-0cdd-4072-9a90-d538c718b57c.jpg?v=1754130671&width=1200","https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_D_08X1_52971618-a68f-4734-9c9a-4fece9399dcc.jpg?v=1754130671&width=500","https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_E_08X1_3eafa313-f4c5-45b9-91e7-6d8802edfe8e.jpg?v=1754130671&width=500"]',
+    'additional_images' => '["https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_D_08X1_52971618-a68f-4734-9c9a-4fece9399dcc.jpg?v=1754130671&width=500","https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_E_08X1_3eafa313-f4c5-45b9-91e7-6d8802edfe8e.jpg?v=1754130671&width=500"]',
+    'videos' => '[]',
+    'stock' => 50,
+    'stock_quantity' => 50,
+    'is_active' => 1,
+    'rating' => '4.70',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"Sugar Berry","color_code":"#E75480","image_url":"https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_A_107X1_1e67a444-0cdd-4072-9a90-d538c718b57c.jpg?v=1754130671&width=1200","additional_images":["https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_D_08X1_52971618-a68f-4734-9c9a-4fece9399dcc.jpg?v=1754130671&width=500","https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11832C_A11832C_E_08X1_3eafa313-f4c5-45b9-91e7-6d8802edfe8e.jpg?v=1754130671&width=500"],"videos":[]}]',
+    'size' => '["28","29","30","31","32","33","34","35"]',
+    'color' => 'Sugar Berry',
+    'created_at' => '2025-10-15 20:02:52',
+    'updated_at' => '2025-10-15 20:02:52',
+  ),
+  1 => 
+  array (
+    'name' => 'Campus 00s Shoes',
+    'slug' => NULL,
+    'sku' => 'SKU-68f2997c45468',
+    'description' => 'Adidas Campus 00s Shoes for kids - classic style with modern comfort in Clear Pink.',
+    'price' => '80.00',
+    'original_price' => NULL,
+    'old_price' => '80.00',
+    'category' => 'lifestyle',
+    'subcategory' => NULL,
+    'brand' => 'Adidas',
+    'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/a721da06765b464580ce1775777d636c_9366/JP5507_01_00_standard.jpg',
+    'images' => '["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/a721da06765b464580ce1775777d636c_9366\\/JP5507_01_00_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/77c1cd568cff4e3384b525f488ec0d93_9366\\/JP5507_05_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/29d2c3d3e7d44b38849b2d3d126ed5d1_9366\\/JP5507_04_standard.jpg"]',
+    'additional_images' => NULL,
+    'videos' => NULL,
+    'stock' => 100,
+    'stock_quantity' => 100,
+    'is_active' => 1,
+    'rating' => '4.50',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"Clear Pink","color_code":"#FFB6C1","image_url":"https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/a721da06765b464580ce1775777d636c_9366\\/JP5507_01_00_standard.jpg","additional_images":["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/77c1cd568cff4e3384b525f488ec0d93_9366\\/JP5507_05_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/29d2c3d3e7d44b38849b2d3d126ed5d1_9366\\/JP5507_04_standard.jpg"],"videos":["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/a8f0e00b4cd144a1b214c7f7fa11e653_d98c\\/JP5507_HM51.mp4"]}]',
+    'size' => NULL,
+    'color' => NULL,
+    'created_at' => '2025-10-15 22:42:39',
+    'updated_at' => '2025-10-15 22:42:39',
+  ),
+  2 => 
+  array (
+    'name' => 'Campus 00s Elastic Lace Shoes Kids',
+    'slug' => NULL,
+    'sku' => 'SKU-68f2997c45469',
+    'description' => 'Adidas Campus 00s Elastic Lace Shoes for kids - easy slip-on style with elastic laces in Grey Three colorway.',
+    'price' => '75.00',
+    'original_price' => NULL,
+    'old_price' => '75.00',
+    'category' => 'lifestyle',
+    'subcategory' => NULL,
+    'brand' => 'Adidas',
+    'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/3912805272fb4bc484e0dadc688b0cdd_9366/JI4330_01_00_standard.jpg',
+    'images' => '["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/3912805272fb4bc484e0dadc688b0cdd_9366\\/JI4330_01_00_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/8ba1dd065e49415dbeb0c5b8a8c2ac3d_9366\\/JI4330_04_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/8a1c7c8fa8d948e58301cbd4766c927e_9366\\/JI4330_05_standard.jpg"]',
+    'additional_images' => NULL,
+    'videos' => NULL,
+    'stock' => 100,
+    'stock_quantity' => 100,
+    'is_active' => 1,
+    'rating' => '4.60',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"Grey Three","color_code":"#808080","image_url":"https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/3912805272fb4bc484e0dadc688b0cdd_9366\\/JI4330_01_00_standard.jpg","additional_images":["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/8ba1dd065e49415dbeb0c5b8a8c2ac3d_9366\\/JI4330_04_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/8a1c7c8fa8d948e58301cbd4766c927e_9366\\/JI4330_05_standard.jpg"],"videos":["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/2502995f538647afac95ed6fdfcd9bd3_d98c\\/JI4330_HM51.mp4"]}]',
+    'size' => NULL,
+    'color' => NULL,
+    'created_at' => '2025-10-15 22:47:50',
+    'updated_at' => '2025-10-16 06:38:30',
+  ),
+  3 => 
+  array (
+    'name' => 'Samba OG Shoes Kids',
+    'slug' => NULL,
+    'sku' => 'SKU-68f2997c4546c',
+    'description' => 'Adidas Samba OG Shoes for kids - iconic football-inspired design in classic Core Black colorway.',
+    'price' => '70.00',
+    'original_price' => NULL,
+    'old_price' => '70.00',
+    'category' => 'lifestyle',
+    'subcategory' => NULL,
+    'brand' => 'Adidas',
+    'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/c67fe1e42d914f58945caeadf84f6d33_9366/IE3678_01_standard.jpg',
+    'images' => '["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/c67fe1e42d914f58945caeadf84f6d33_9366\\/IE3678_01_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/a76cc7877aa54445a81aca2898a65214_9366\\/IE3678_05_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/4a1007291c004f7c95a7c9bbd5ae1d8b_9366\\/IE3678_04_standard.jpg"]',
+    'additional_images' => NULL,
+    'videos' => '["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/f9261c168d2f4220821de4bd6a454a69_d98c\\/IE3678_HM51.mp4"]',
+    'stock' => 100,
+    'stock_quantity' => 100,
+    'is_active' => 1,
+    'rating' => '4.80',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"Core Black","color_code":"#000000","image_url":"https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/c67fe1e42d914f58945caeadf84f6d33_9366\\/IE3678_01_standard.jpg","additional_images":["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/a76cc7877aa54445a81aca2898a65214_9366\\/IE3678_05_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/4a1007291c004f7c95a7c9bbd5ae1d8b_9366\\/IE3678_04_standard.jpg"],"videos":["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/f9261c168d2f4220821de4bd6a454a69_d98c\\/IE3678_HM51.mp4"]},{"id":2,"color_name":"Cloud White","color_code":"#F0F0F0","image_url":"https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/a6a1ecb378204fc6a5a3571b1a3a973e_9366\\/IE3677_01_00_standard.jpg","additional_images":["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/c66c06e041b9417d935e6326d3370916_9366\\/IE3677_04_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/b910cc92690c443eba304a7c48c680dc_9366\\/IE3677_05_standard.jpg"],"videos":["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/937f153cb7bb40088d7c5b0200e89660_d98c\\/IE3677_HM51.mp4"]}]',
+    'size' => NULL,
+    'color' => NULL,
+    'created_at' => '2025-10-16 06:51:28',
+    'updated_at' => '2025-10-16 07:13:26',
+  ),
+  4 => 
+  array (
+    'name' => 'SL 72 RS Elastic Laces Shoes Kids',
+    'slug' => NULL,
+    'sku' => 'SKU-68f2997c4546f',
+    'description' => 'Adidas SL 72 RS Elastic Laces Shoes for kids - retro-inspired design with easy elastic laces in Blue colorway.',
+    'price' => '65.00',
+    'original_price' => NULL,
+    'old_price' => '65.00',
+    'category' => 'lifestyle',
+    'subcategory' => NULL,
+    'brand' => 'Adidas',
+    'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/1638be80344740528ed7d4faf8d56e91_9366/JH9953_01_00_standard.jpg',
+    'images' => '["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/1638be80344740528ed7d4faf8d56e91_9366\\/JH9953_01_00_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/2acc7fed34924a4c852bf41f1cb68708_9366\\/JH9953_04_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/7a9436f60338458eae91cd60628e9f21_9366\\/JH9953_05_standard.jpg"]',
+    'additional_images' => NULL,
+    'videos' => '["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/708523cd26d745f4b2ea5e2ee5455499_d98c\\/JH9953_HM51.mp4"]',
+    'stock' => 100,
+    'stock_quantity' => 100,
+    'is_active' => 1,
+    'rating' => '4.40',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"Blue","color_code":"#0066CC","image_url":"https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/1638be80344740528ed7d4faf8d56e91_9366\\/JH9953_01_00_standard.jpg","additional_images":["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/2acc7fed34924a4c852bf41f1cb68708_9366\\/JH9953_04_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/7a9436f60338458eae91cd60628e9f21_9366\\/JH9953_05_standard.jpg"],"videos":["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/708523cd26d745f4b2ea5e2ee5455499_d98c\\/JH9953_HM51.mp4"]}]',
+    'size' => NULL,
+    'color' => NULL,
+    'created_at' => '2025-10-16 09:04:56',
+    'updated_at' => '2025-10-16 09:13:20',
+  ),
+  5 => 
+  array (
+    'name' => 'Nike Dunk Low',
+    'slug' => NULL,
+    'sku' => 'SKU-68f2997c45471',
+    'description' => 'Nike Dunk Low for kids - classic basketball-inspired design with modern comfort in Pink colorway.',
+    'price' => '75.00',
+    'original_price' => NULL,
+    'old_price' => '75.00',
+    'category' => 'lifestyle',
+    'subcategory' => NULL,
+    'brand' => 'Nike',
+    'image_url' => 'https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/c44372b2-417d-48ab-aca4-c491bd54c376/NIKE+DUNK+LOW+%28GS%29.png',
+    'images' => '["https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/c44372b2-417d-48ab-aca4-c491bd54c376\\/NIKE+DUNK+LOW+%28GS%29.png","https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/12b5868e-bfe0-4566-980c-2f014a94d138\\/NIKE+DUNK+LOW+%28GS%29.png","https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/b67c561f-2a17-4ac8-a28b-bd252b05a3f6\\/NIKE+DUNK+LOW+%28GS%29.png"]',
+    'additional_images' => NULL,
+    'videos' => '[]',
+    'stock' => 100,
+    'stock_quantity' => 100,
+    'is_active' => 1,
+    'rating' => '4.50',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"Pink","color_code":"#FF69B4","image_url":"https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/c44372b2-417d-48ab-aca4-c491bd54c376\\/NIKE+DUNK+LOW+%28GS%29.png","additional_images":["https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/12b5868e-bfe0-4566-980c-2f014a94d138\\/NIKE+DUNK+LOW+%28GS%29.png","https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/b67c561f-2a17-4ac8-a28b-bd252b05a3f6\\/NIKE+DUNK+LOW+%28GS%29.png"],"videos":[]},{"id":2,"color_name":"Dark Driftwood","color_code":"#8B7355","image_url":"https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/36831397-3785-4b54-bf76-40eea83b2b7b\\/NIKE+DUNK+LOW+%28GS%29.png","additional_images":["https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/38f1ec4f-fc68-4756-9c9c-58088282f788\\/NIKE+DUNK+LOW+%28GS%29.png","https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/04f1c108-d56a-42ef-86f4-849d7d02328d\\/NIKE+DUNK+LOW+%28GS%29.png","https:\\/\\/static.nike.com\\/a\\/images\\/t_web_pdp_535_v2\\/f_auto\\/7b86c59c-8343-4568-ba68-2b441ae4e0c7\\/NIKE+DUNK+LOW+%28GS%29.png"],"videos":[]}]',
+    'size' => NULL,
+    'color' => NULL,
+    'created_at' => '2025-10-16 09:27:19',
+    'updated_at' => '2025-10-16 09:30:59',
+  ),
+  6 => 
+  array (
+    'name' => 'Speedcat OG',
+    'slug' => NULL,
+    'sku' => 'SKU-68f2997c45473',
+    'description' => 'Puma Speedcat OG Big Kids Sneakers - classic racing-inspired design with PUMA Black colorway.',
+    'price' => '70.00',
+    'original_price' => NULL,
+    'old_price' => '70.00',
+    'category' => 'lifestyle',
+    'subcategory' => NULL,
+    'brand' => 'Puma',
+    'image_url' => 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/401698/01/sv01/fnd/PNA/fmt/png/Speedcat-OG-Big-Kids\'-Sneakers',
+    'images' => '["https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/sv01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/mod01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/mod02\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers"]',
+    'additional_images' => NULL,
+    'videos' => NULL,
+    'stock' => 100,
+    'stock_quantity' => 100,
+    'is_active' => 1,
+    'rating' => '4.30',
+    'reviews_count' => 0,
+    'featured' => 1,
+    'sizes' => '["28","29","30","31","32","33","34","35"]',
+    'colors' => '[{"id":1,"color_name":"PUMA Black","color_code":"#000000","image_url":"https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/sv01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","additional_images":["https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/mod01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/01\\/mod02\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers"],"videos":[]},{"id":2,"color_name":"Wild Green-Mint Melt","color_code":"#00FF7F","image_url":"https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/12\\/sv01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","additional_images":["https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/12\\/mod01\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/12\\/mod02\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers","https:\\/\\/images.puma.com\\/image\\/upload\\/f_auto,q_auto,b_rgb:fafafa,w_750,h_750\\/global\\/401698\\/12\\/fnd\\/PNA\\/fmt\\/png\\/Speedcat-OG-Big-Kids\'-Sneakers"],"videos":[]}]',
+    'size' => NULL,
+    'color' => NULL,
+    'created_at' => '2025-10-16 09:57:35',
+    'updated_at' => '2025-10-16 10:03:20',
+  ),
+);
+        
         // Insert products_women
         if (Schema::hasTable('products_women') && count($productsWomen) > 0) {
             echo "📝 Seeding products_women...\n";
@@ -383,6 +590,17 @@ class RealProductsSeeder extends Seeder
             }
         }
 
+        // Insert products_men
+        if (Schema::hasTable('products_men') && count($productsMen) > 0) {
+            echo "📝 Seeding products_men...\n";
+            try {
+                DB::table('products_men')->insert($productsMen);
+                echo "✅ Added " . count($productsMen) . " men products\n";
+            } catch (\Exception $e) {
+                echo "❌ Error seeding products_men: " . $e->getMessage() . "\n";
+            }
+        }
+        
         // Insert products_kids
         if (Schema::hasTable('products_kids') && count($productsKids) > 0) {
             echo "📝 Seeding products_kids...\n";
@@ -393,10 +611,8 @@ class RealProductsSeeder extends Seeder
                 echo "❌ Error seeding products_kids: " . $e->getMessage() . "\n";
             }
         }
-
-        echo "⚠️ Skipping products_men (table only has id and timestamps)\n";
-
+        
         echo "🎉 Real products seeding completed!\n";
-        echo "📊 Summary: Women=" . count($productsWomen) . ", Kids=" . count($productsKids) . "\n";
+        echo "📊 Summary: Women=" . count($productsWomen) . ", Men=" . count($productsMen) . ", Kids=" . count($productsKids) . "\n";
     }
 }

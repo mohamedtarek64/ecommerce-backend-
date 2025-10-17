@@ -27,7 +27,7 @@ function mapToRailwaySchema($product, $targetTable) {
     // category, subcategory, brand, image_url, images, additional_images, videos
     // stock, stock_quantity, is_active, rating, reviews_count, featured
     // sizes, colors, size, color, created_at, updated_at
-    
+
     return [
         'name' => $product['name'],
         'slug' => $product['slug'] ?? null,
@@ -58,10 +58,10 @@ function mapToRailwaySchema($product, $targetTable) {
     ];
 }
 
-// Convert data
+// Convert data - EACH TABLE GETS ITS OWN DATA
 $mappedWomen = array_map(function($p) { return mapToRailwaySchema($p, 'products_women'); }, $productsWomen);
-$mappedMen = []; // products_men table is empty (only id and timestamps)
-$mappedKids = array_map(function($p) { return mapToRailwaySchema($p, 'products_kids'); }, $productsMen); // Use men data for kids
+$mappedMen = array_map(function($p) { return mapToRailwaySchema($p, 'products_men'); }, $productsMen);
+$mappedKids = array_map(function($p) { return mapToRailwaySchema($p, 'products_kids'); }, $productsKids);
 
 echo "✅ Data mapped successfully\n\n";
 
@@ -86,10 +86,13 @@ class RealProductsSeeder extends Seeder
 
         // Products Women Data (' . count($mappedWomen) . ' products)
         $productsWomen = ' . var_export($mappedWomen, true) . ';
-
+        
+        // Products Men Data (' . count($mappedMen) . ' products)
+        $productsMen = ' . var_export($mappedMen, true) . ';
+        
         // Products Kids Data (' . count($mappedKids) . ' products)
         $productsKids = ' . var_export($mappedKids, true) . ';
-
+        
         // Insert products_women
         if (Schema::hasTable(\'products_women\') && count($productsWomen) > 0) {
             echo "📝 Seeding products_women...\\n";
@@ -101,6 +104,17 @@ class RealProductsSeeder extends Seeder
             }
         }
 
+        // Insert products_men
+        if (Schema::hasTable(\'products_men\') && count($productsMen) > 0) {
+            echo "📝 Seeding products_men...\\n";
+            try {
+                DB::table(\'products_men\')->insert($productsMen);
+                echo "✅ Added " . count($productsMen) . " men products\\n";
+            } catch (\Exception $e) {
+                echo "❌ Error seeding products_men: " . $e->getMessage() . "\\n";
+            }
+        }
+        
         // Insert products_kids
         if (Schema::hasTable(\'products_kids\') && count($productsKids) > 0) {
             echo "📝 Seeding products_kids...\\n";
@@ -111,11 +125,9 @@ class RealProductsSeeder extends Seeder
                 echo "❌ Error seeding products_kids: " . $e->getMessage() . "\\n";
             }
         }
-
-        echo "⚠️ Skipping products_men (table only has id and timestamps)\\n";
-
+        
         echo "🎉 Real products seeding completed!\\n";
-        echo "📊 Summary: Women=" . count($productsWomen) . ", Kids=" . count($productsKids) . "\\n";
+        echo "📊 Summary: Women=" . count($productsWomen) . ", Men=" . count($productsMen) . ", Kids=" . count($productsKids) . "\\n";
     }
 }
 ';
@@ -123,7 +135,8 @@ class RealProductsSeeder extends Seeder
 file_put_contents('database/seeders/RealProductsSeeder.php', $seederCode);
 
 echo "✅ Compatible RealProductsSeeder created!\n";
-echo "📊 Total products: " . (count($mappedWomen) + count($mappedKids)) . "\n";
+echo "📊 Total products: " . (count($mappedWomen) + count($mappedMen) + count($mappedKids)) . "\n";
 echo "   - Women: " . count($mappedWomen) . "\n";
+echo "   - Men: " . count($mappedMen) . "\n";
 echo "   - Kids: " . count($mappedKids) . "\n\n";
 echo "🎉 Ready to push to Railway!\n";
