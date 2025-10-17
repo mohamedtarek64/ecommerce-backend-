@@ -4,7 +4,14 @@ nixPkgs = ["php81", "php81Packages.composer"]
 [phases.install]
 cmds = [
     "mkdir -p bootstrap/cache storage/logs storage/framework/cache storage/framework/sessions storage/framework/views",
-    "chmod -R 777 storage bootstrap/cache"
+    "chmod -R 777 storage bootstrap/cache",
+    "composer install --no-dev --optimize-autoloader"
+]
+
+[phases.build]
+cmds = [
+    "php artisan config:cache",
+    "php artisan route:cache"
 ]
 
 [start]
