@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products_women', function (Blueprint $table) {
-            $table->boolean('is_active')->default(true)->after('status');
-            $table->integer('stock_quantity')->default(0)->after('quantity');
+            if (!Schema::hasColumn('products_women', 'is_active')) {
+                $table->boolean('is_active')->default(true);
+            }
+            if (!Schema::hasColumn('products_women', 'stock_quantity')) {
+                $table->integer('stock_quantity')->default(0);
+            }
         });
     }
 
