@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             BrandSeeder::class,
-            // ProductSeeder::class, // Removed - products already migrated
+            ProductSeeder::class,
+            ProductSizeSeeder::class,
+            DiscountCodeSeeder::class,
+            ImageSeeder::class,
         ]);
     }
 }
