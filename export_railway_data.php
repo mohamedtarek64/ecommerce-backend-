@@ -100,6 +100,6 @@ try {
     echo "MYSQLDATABASE: " . (getenv('MYSQLDATABASE') ?: 'NOT SET') . "\n";
     echo "MYSQLUSER: " . (getenv('MYSQLUSER') ?: 'NOT SET') . "\n";
     echo "MYSQLPASSWORD: " . (getenv('MYSQLPASSWORD') ? 'SET' : 'NOT SET') . "\n";
-    
+
     echo "\n⚠️ Export skipped due to connection error, but app will continue running.\n";
 }
