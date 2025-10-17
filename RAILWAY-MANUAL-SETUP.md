@@ -28,7 +28,7 @@ https://railway.app/dashboard
 ### **5️⃣ ابحث عن "Custom Start Command":**
 قد تجدها بأسماء مختلفة:
 - **Custom Start Command**
-- **Start Command** 
+- **Start Command**
 - **Override Start Command**
 - **Custom Deploy Command**
 
@@ -100,4 +100,3 @@ railway run php export_railway_data.php
 أرسل لي:
 1. Screenshot من Settings → Deploy section
 2. Deploy Logs الجديدة بعد تطبيق الإعدادات
-

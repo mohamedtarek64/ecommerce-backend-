@@ -3,11 +3,12 @@
 echo "🚀 Railway Database Export Tool\n\n";
 
 // Railway Database Connection from Environment Variables
-$host = getenv('MYSQLHOST') ?: '${{RAILWAY_PRIVATE_DOMAIN}}';
-$port = getenv('MYSQLPORT') ?: '3306';
-$database = getenv('MYSQLDATABASE') ?: 'railway';
-$username = getenv('MYSQLUSER') ?: 'root';
-$password = getenv('MYSQLPASSWORD') ?: 'dnGTucLuCwRIpgnDntPSgOCRQfRDQtQS';
+// Try Laravel's DB_ variables first, then Railway's MYSQL variables
+$host = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: 'localhost';
+$port = getenv('DB_PORT') ?: getenv('MYSQLPORT') ?: '3306';
+$database = getenv('DB_DATABASE') ?: getenv('MYSQLDATABASE') ?: 'railway';
+$username = getenv('DB_USERNAME') ?: getenv('MYSQLUSER') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: '';
 
 echo "📊 Connecting to Railway MySQL...\n";
 echo "Host: $host\n";
@@ -86,20 +87,19 @@ try {
 
 } catch (PDOException $e) {
     echo "❌ Connection failed: " . $e->getMessage() . "\n";
-    echo "\n💡 Make sure to:\n";
-    echo "1. Environment variables are set correctly:\n";
-    echo "   - MYSQLHOST\n";
-    echo "   - MYSQLPORT\n";
-    echo "   - MYSQLDATABASE\n";
-    echo "   - MYSQLUSER\n";
-    echo "   - MYSQLPASSWORD\n";
-    echo "2. Run this script from Railway or with access to Railway network\n";
-    echo "3. Check if database credentials are correct\n";
+    echo "\n💡 Make sure environment variables are set correctly.\n";
 
     echo "\n🔍 Current Environment Variables:\n";
-    echo "MYSQLHOST: " . (getenv('MYSQLHOST') ?: 'NOT SET') . "\n";
+    echo "DB_HOST: " . (getenv('DB_HOST') ?: 'NOT SET') . "\n";
+    echo "DB_PORT: " . (getenv('DB_PORT') ?: 'NOT SET') . "\n";
+    echo "DB_DATABASE: " . (getenv('DB_DATABASE') ?: 'NOT SET') . "\n";
+    echo "DB_USERNAME: " . (getenv('DB_USERNAME') ?: 'NOT SET') . "\n";
+    echo "DB_PASSWORD: " . (getenv('DB_PASSWORD') ? 'SET' : 'NOT SET') . "\n";
+    echo "\nMYSQLHOST: " . (getenv('MYSQLHOST') ?: 'NOT SET') . "\n";
     echo "MYSQLPORT: " . (getenv('MYSQLPORT') ?: 'NOT SET') . "\n";
     echo "MYSQLDATABASE: " . (getenv('MYSQLDATABASE') ?: 'NOT SET') . "\n";
     echo "MYSQLUSER: " . (getenv('MYSQLUSER') ?: 'NOT SET') . "\n";
-    echo "MYSQLPASSWORD: " . (getenv('MYSQLPASSWORD') ?: 'NOT SET') . "\n";
+    echo "MYSQLPASSWORD: " . (getenv('MYSQLPASSWORD') ? 'SET' : 'NOT SET') . "\n";
+    
+    echo "\n⚠️ Export skipped due to connection error, but app will continue running.\n";
 }
