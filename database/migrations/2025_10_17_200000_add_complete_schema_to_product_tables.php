@@ -168,6 +168,9 @@ return new class extends Migration
             if (!Schema::hasColumn('products_kids', 'color')) {
                 $table->string('color')->nullable();
             }
+            if (!Schema::hasColumn('products_kids', 'featured')) {
+                $table->boolean('featured')->default(false);
+            }
         });
     }
 
@@ -189,4 +192,3 @@ return new class extends Migration
         });
     }
 };
-
