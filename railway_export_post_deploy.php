@@ -157,7 +157,7 @@ try {
     $summary .= "Export Date: " . $exportData['export_metadata']['exported_at'] . "\n";
     $summary .= "Total Tables: " . $exportData['export_metadata']['total_tables'] . "\n";
     $summary .= "Total Records: " . $exportData['export_metadata']['total_records'] . "\n\n";
-    
+
     $summary .= "TABLE BREAKDOWN:\n";
     $summary .= "===============\n";
     foreach ($exportData as $table => $data) {

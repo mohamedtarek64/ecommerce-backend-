@@ -1,0 +1,27 @@
+DATABASE EXPORT SUMMARY
+=====================
+
+Export Date: 2025-10-17 11:01:04
+Total Tables: 17
+Total Records: 83
+
+TABLE BREAKDOWN:
+===============
+users               : 5 records
+categories          : 3 records
+brands              : 4 records
+products_women      : 6 records
+products_men        : 6 records
+products_kids       : 7 records
+cart_items          : 8 records
+orders              : 2 records
+order_items         : 3 records
+wishlist_items      : 5 records
+images              : 0 records
+discount_codes      : 4 records
+invoices            : 1 records
+invoice_items       : 1 records
+notifications       : 3 records
+product_colors      : 2 records
+product_sizes       : 12 records
+personal_access_tokens: 11 records

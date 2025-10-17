@@ -15847,3 +15847,27 @@
 [2025-10-16 19:32:33] local.INFO: Search suggestions result: {"query":"<img src=x onerror=alert('XSS')>","men_count":0,"women_count":0,"kids_count":0,"total_suggestions":0} 
 [2025-10-16 19:32:34] local.INFO: Search suggestions request: {"query":"javascript:alert('XSS')","request_data":{"q":"javascript:alert('XSS')"}} 
 [2025-10-16 19:32:34] local.INFO: Search suggestions result: {"query":"javascript:alert('XSS')","men_count":0,"women_count":0,"kids_count":0,"total_suggestions":0} 
+[2025-10-17 11:00:00] local.ERROR: PHP Parse error: Syntax error, unexpected T_NS_SEPARATOR on line 1 {"exception":"[object] (Psy\\Exception\\ParseErrorException(code: 0): PHP Parse error: Syntax error, unexpected T_NS_SEPARATOR on line 1 at C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\psy\\psysh\\src\\Exception\\ParseErrorException.php:44)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\psy\\psysh\\src\\CodeCleaner.php(306): Psy\\Exception\\ParseErrorException::fromParseError()
+#1 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\psy\\psysh\\src\\CodeCleaner.php(240): Psy\\CodeCleaner->parse()
+#2 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\psy\\psysh\\src\\Shell.php(852): Psy\\CodeCleaner->clean()
+#3 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\psy\\psysh\\src\\Shell.php(881): Psy\\Shell->addCode()
+#4 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\psy\\psysh\\src\\Shell.php(1394): Psy\\Shell->setCode()
+#5 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\tinker\\src\\Console\\TinkerCommand.php(76): Psy\\Shell->execute()
+#6 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Laravel\\Tinker\\Console\\TinkerCommand->handle()
+#7 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#8 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#9 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#10 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(661): Illuminate\\Container\\BoundMethod::call()
+#11 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call()
+#12 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\symfony\\console\\Command\\Command.php(291): Illuminate\\Console\\Command->execute()
+#13 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run()
+#14 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\symfony\\console\\Application.php(1014): Illuminate\\Console\\Command->run()
+#15 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\symfony\\console\\Application.php(301): Symfony\\Component\\Console\\Application->doRunCommand()
+#16 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#17 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run()
+#18 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run()
+#19 C:\\xampp\\htdocs\\php-practice\\E-COMMERCE\\backend\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#20 {main}
+"} 
