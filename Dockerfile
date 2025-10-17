@@ -23,7 +23,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Create necessary directories first
+# Copy application code first
+COPY . .
+
+# Create necessary directories
 RUN mkdir -p storage/logs \
     && mkdir -p storage/framework/cache \
     && mkdir -p storage/framework/sessions \
@@ -31,16 +34,10 @@ RUN mkdir -p storage/logs \
     && mkdir -p bootstrap/cache \
     && chmod -R 777 storage bootstrap/cache
 
-# Copy composer files first
-COPY composer.json composer.lock ./
-
-# Install dependencies
+# Install dependencies (now artisan file exists)
 RUN composer install --no-dev --optimize-autoloader
 
-# Copy application code
-COPY . .
-
-# Set permissions again after copying
+# Set permissions again after installing
 RUN chmod -R 777 storage bootstrap/cache
 
 # Copy and make start script executable
