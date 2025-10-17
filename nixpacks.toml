@@ -10,13 +10,11 @@ cmds = [
   'mkdir -p bootstrap/cache',
   'chmod -R 777 storage',
   'chmod -R 777 bootstrap/cache',
-  'composer install --no-dev --optimize-autoloader',
-  'php artisan migrate:fresh --force',
-  'php artisan db:seed --force'
+  'composer install --no-dev --optimize-autoloader'
 ]
 
 [phases.build]
 cmds = ['php artisan config:cache', 'php artisan route:cache']
 
 [start]
-cmd = 'php artisan config:clear && php artisan cache:clear && exec php -S 0.0.0.0:${PORT:-8000} -t public'
+cmd = 'php artisan config:clear && php artisan cache:clear && sleep 10 && php artisan migrate:fresh --force && php artisan db:seed --force && exec php -S 0.0.0.0:${PORT:-8000} -t public'
