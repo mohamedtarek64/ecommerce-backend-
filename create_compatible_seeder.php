@@ -20,68 +20,42 @@ echo "   - Women: " . count($productsWomen) . " products\n";
 echo "   - Men: " . count($productsMen) . " products\n";
 echo "   - Kids: " . count($productsKids) . " products\n\n";
 
-// Map data to match Railway schema
+// Map data to ACTUAL localhost schema
 function mapToRailwaySchema($product, $targetTable) {
-    if ($targetTable === 'products_women') {
-        // Schema: name, price, description, image_url, category, brand, size, color, material, is_active, stock_quantity, sku, weight, dimensions, care_instructions, tags, meta_title, meta_description, slug, featured, discount_percentage, original_price, timestamps
-        
-        // Handle images - use additional_images if available, otherwise use images array
-        $imagesData = $product['additional_images'] ?? $product['images'] ?? '[]';
-        
-        // Handle colors - keep as JSON string
-        $colorsData = $product['colors'] ?? null;
-        
-        // Handle sizes - keep as JSON string
-        $sizesData = $product['sizes'] ?? null;
-        
-        return [
-            'name' => $product['name'],
-            'price' => $product['price'],
-            'description' => $product['description'],
-            'image_url' => $product['image_url'],
-            'category' => $product['category'] ?? 'women',
-            'brand' => $product['brand'] ?? 'Unknown',
-            'size' => $sizesData, // JSON array of sizes
-            'color' => $colorsData, // JSON array of colors
-            'sku' => $product['sku'] ?? 'SKU-' . uniqid(),
-            'stock_quantity' => $product['stock_quantity'] ?? 0,
-            'is_active' => $product['is_active'] ?? 1,
-            'featured' => $product['featured'] ?? 0,
-            'discount_percentage' => isset($product['original_price']) && $product['original_price'] > $product['price'] 
-                ? round((($product['original_price'] - $product['price']) / $product['original_price']) * 100, 2)
-                : $product['discount_percentage'] ?? null,
-            'original_price' => $product['original_price'] ?? null,
-            'slug' => $product['slug'] ?? null,
-            'dimensions' => $product['dimensions'] ?? null,
-            'weight' => $product['weight'] ?? null,
-            'tags' => $product['tags'] ?? null,
-            'meta_title' => $product['meta_title'] ?? null,
-            'meta_description' => $product['meta_description'] ?? null,
-            'care_instructions' => $product['care_instructions'] ?? null,
-            'material' => $product['material'] ?? null,
-            'created_at' => $product['created_at'] ?? date('Y-m-d H:i:s'),
-            'updated_at' => $product['updated_at'] ?? date('Y-m-d H:i:s'),
-        ];
-    } elseif ($targetTable === 'products_kids') {
-        // Schema: id, name, description, price, original_price, image_url, sku, stock_quantity, category_id, brand_id, is_active, is_featured, timestamps
-        return [
-            'name' => $product['name'],
-            'description' => $product['description'],
-            'price' => $product['price'],
-            'original_price' => $product['original_price'] ?? null,
-            'image_url' => $product['image_url'],
-            'sku' => $product['sku'] ?? 'SKU-' . uniqid(),
-            'stock_quantity' => $product['stock_quantity'] ?? 0,
-            'category_id' => 3, // Kids category
-            'brand_id' => null,
-            'is_active' => $product['is_active'] ?? 1,
-            'is_featured' => $product['featured'] ?? 0,
-            'created_at' => $product['created_at'] ?? date('Y-m-d H:i:s'),
-            'updated_at' => $product['updated_at'] ?? date('Y-m-d H:i:s'),
-        ];
-    }
+    // REAL Schema for both products_women and products_kids:
+    // id, name, slug, sku, description, price, original_price, old_price
+    // category, subcategory, brand, image_url, images, additional_images, videos
+    // stock, stock_quantity, is_active, rating, reviews_count, featured
+    // sizes, colors, size, color, created_at, updated_at
     
-    return [];
+    return [
+        'name' => $product['name'],
+        'slug' => $product['slug'] ?? null,
+        'sku' => $product['sku'] ?? 'SKU-' . uniqid(),
+        'description' => $product['description'],
+        'price' => $product['price'],
+        'original_price' => $product['original_price'] ?? null,
+        'old_price' => $product['old_price'] ?? null,
+        'category' => $product['category'] ?? ($targetTable === 'products_women' ? 'Women' : 'Kids'),
+        'subcategory' => $product['subcategory'] ?? null,
+        'brand' => $product['brand'] ?? 'Unknown',
+        'image_url' => $product['image_url'],
+        'images' => $product['images'] ?? '[]',
+        'additional_images' => $product['additional_images'] ?? null,
+        'videos' => $product['videos'] ?? null,
+        'stock' => $product['stock'] ?? 0,
+        'stock_quantity' => $product['stock_quantity'] ?? 0,
+        'is_active' => $product['is_active'] ?? 1,
+        'rating' => $product['rating'] ?? '0.00',
+        'reviews_count' => $product['reviews_count'] ?? 0,
+        'featured' => $product['featured'] ?? 0,
+        'sizes' => $product['sizes'] ?? null,
+        'colors' => $product['colors'] ?? null,
+        'size' => $product['size'] ?? null,
+        'color' => $product['color'] ?? null,
+        'created_at' => $product['created_at'] ?? date('Y-m-d H:i:s'),
+        'updated_at' => $product['updated_at'] ?? date('Y-m-d H:i:s'),
+    ];
 }
 
 // Convert data
