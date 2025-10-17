@@ -1,0 +1,20 @@
+[phases.setup]
+nixPkgs = ['php81', 'php81Packages.composer']
+
+[phases.install]
+cmds = [
+  'mkdir -p storage/logs',
+  'mkdir -p storage/framework/cache',
+  'mkdir -p storage/framework/sessions',
+  'mkdir -p storage/framework/views',
+  'mkdir -p bootstrap/cache',
+  'chmod -R 777 storage',
+  'chmod -R 777 bootstrap/cache',
+  'composer install --no-dev --optimize-autoloader'
+]
+
+[phases.build]
+cmds = ['php artisan config:cache', 'php artisan route:cache']
+
+[start]
+cmd = 'php artisan migrate:fresh --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=$PORT'
