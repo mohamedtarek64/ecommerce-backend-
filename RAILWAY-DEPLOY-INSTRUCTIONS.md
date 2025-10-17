@@ -138,4 +138,3 @@ Server running on [http://0.0.0.0:8080]
 **الحل الأخير: Dockerfile مخصص**
 
 سأقوم بإنشاء `Dockerfile` يضمن تنفيذ كل الخطوات.
-
