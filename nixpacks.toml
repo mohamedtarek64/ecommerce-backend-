@@ -17,4 +17,4 @@ cmds = [
 cmds = []
 
 [start]
-cmd = 'php artisan config:clear && php artisan cache:clear && php artisan migrate --force && exec php -S 0.0.0.0:${PORT:-8000} -t public'
+cmd = 'php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php artisan db:seed --force && exec php -S 0.0.0.0:${PORT:-8000} -t public'
