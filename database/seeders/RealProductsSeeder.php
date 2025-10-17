@@ -15,7 +15,7 @@ class RealProductsSeeder extends Seeder
     public function run(): void
     {
         echo "🌱 Seeding Real Products Data (Compatible Schema)...\n";
-        
+
         // Products Women Data (6 products)
         $productsWomen = array (
   0 => 
@@ -26,6 +26,8 @@ class RealProductsSeeder extends Seeder
     'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/fa49d42677a74752808affbff9994b00_9366/JP9764_HM3_hover.jpg',
     'category' => 'Women',
     'brand' => 'Adidas',
+    'size' => NULL,
+    'color' => NULL,
     'sku' => '12',
     'stock_quantity' => 1200,
     'is_active' => 1,
@@ -33,6 +35,13 @@ class RealProductsSeeder extends Seeder
     'discount_percentage' => 15.0,
     'original_price' => '100.00',
     'slug' => 'stabil-16-indoor-shoes-off-white',
+    'dimensions' => NULL,
+    'weight' => NULL,
+    'tags' => NULL,
+    'meta_title' => NULL,
+    'meta_description' => NULL,
+    'care_instructions' => NULL,
+    'material' => NULL,
     'created_at' => '2025-10-13 20:20:09',
     'updated_at' => '2025-10-16 15:38:47',
   ),
@@ -44,6 +53,8 @@ class RealProductsSeeder extends Seeder
     'image_url' => 'https://nb.scene7.com/is/image/NB/wx608wb5_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440',
     'category' => 'training',
     'brand' => 'New Balance',
+    'size' => '["35","36","37","38","39","40","41","42"]',
+    'color' => '[{"id":1,"color_name":"ANGORA with EARTH SHADOW and Sea Salt","color_code":"#F5F5DC","image_url":"https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxlj5_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","additional_images":["https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxlj5_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/www.newbalance.com\\/on\\/demandware.static\\/-\\/Library-Sites-NBUS-NBCA\\/default\\/dwae665b1f\\/images\\/page-designer\\/2025\\/July\\/NB4081_Comp_Y_Image1.jpg","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxlj5_nb_03_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440"],"videos":["https:\\/\\/nb.scene7.com\\/is\\/content\\/NB\\/NB4081_Rebelv5_TechBenefit_15s_16x9_sfra"]},{"id":2,"color_name":"White with Light Blue","color_code":"#FFFFFF","image_url":"https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wx608wb5_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","additional_images":["https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wx608wb5_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wx608wb5_nb_03_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wx608wb5_nb_04_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440"],"videos":[]}]',
     'sku' => 'WX608WB5',
     'stock_quantity' => 150,
     'is_active' => 1,
@@ -51,6 +62,13 @@ class RealProductsSeeder extends Seeder
     'discount_percentage' => NULL,
     'original_price' => NULL,
     'slug' => NULL,
+    'dimensions' => NULL,
+    'weight' => NULL,
+    'tags' => NULL,
+    'meta_title' => NULL,
+    'meta_description' => NULL,
+    'care_instructions' => NULL,
+    'material' => NULL,
     'created_at' => '2025-10-15 16:32:19',
     'updated_at' => '2025-10-16 07:57:13',
   ),
@@ -62,13 +80,22 @@ class RealProductsSeeder extends Seeder
     'image_url' => 'https://nb.scene7.com/is/image/NB/wfcxli5_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440',
     'category' => 'running',
     'brand' => 'New Balance',
-    'sku' => 'SKU-68f2954dca3a8',
+    'size' => '["35","36","37","38","39","40","41","42"]',
+    'color' => '[{"id":1,"color_name":"PINK GRANITE with SILVER METALLIC and Linen","color_code":"#C4A7A7","image_url":"https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxli5_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","additional_images":["https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxli5_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxli5_nb_03_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/wfcxli5_nb_04_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440"],"videos":[]}]',
+    'sku' => 'SKU-68f297296514d',
     'stock_quantity' => 100,
     'is_active' => 1,
     'featured' => 1,
     'discount_percentage' => NULL,
     'original_price' => NULL,
     'slug' => NULL,
+    'dimensions' => NULL,
+    'weight' => NULL,
+    'tags' => NULL,
+    'meta_title' => NULL,
+    'meta_description' => NULL,
+    'care_instructions' => NULL,
+    'material' => NULL,
     'created_at' => '2025-10-15 19:59:58',
     'updated_at' => '2025-10-15 19:59:58',
   ),
@@ -80,6 +107,8 @@ class RealProductsSeeder extends Seeder
     'image_url' => 'https://converse.ca/cdn/shop/files/A11875C_A11875C_A_107X1_640d982f-c1ff-4dbe-9750-fce47c269765.jpg?v=1754070984&width=1200',
     'category' => 'lifestyle',
     'brand' => 'Converse',
+    'size' => '["35","36","37","38","39","40","41","42"]',
+    'color' => '[{"id":1,"color_name":"Sugar Berry","color_code":"#E75480","image_url":"https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11875C_A11875C_A_107X1_640d982f-c1ff-4dbe-9750-fce47c269765.jpg?v=1754070984&width=1200","additional_images":["https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11875C_A11875C_E_08X1_fc4eb3fc-ca1c-43d7-afa2-f88a7de753ed.jpg?v=1754070994&width=500","https:\\/\\/converse.ca\\/cdn\\/shop\\/files\\/A11875C_A11875C_D_08X1_e4ed7793-bb14-4387-a38f-a2e22a3890c3.jpg?v=1754070994&width=500"],"videos":["https:\\/\\/converse.ca\\/cdn\\/shop\\/videos\\/c\\/vp\\/1dd545997e304f618739849f1397c9b1\\/1dd545997e304f618739849f1397c9b1.HD-1080p-7.2Mbps-47656740.mp4?v=0"]}]',
     'sku' => 'CONV-A11875C',
     'stock_quantity' => 50,
     'is_active' => 1,
@@ -87,6 +116,13 @@ class RealProductsSeeder extends Seeder
     'discount_percentage' => 11.76,
     'original_price' => '85.00',
     'slug' => 'chuck-taylor-all-star-lift-platform-sugar-berry',
+    'dimensions' => NULL,
+    'weight' => NULL,
+    'tags' => NULL,
+    'meta_title' => NULL,
+    'meta_description' => NULL,
+    'care_instructions' => NULL,
+    'material' => NULL,
     'created_at' => '2025-10-15 20:01:19',
     'updated_at' => '2025-10-15 20:01:19',
   ),
@@ -98,6 +134,8 @@ class RealProductsSeeder extends Seeder
     'image_url' => 'https://nb.scene7.com/is/image/NB/u530hfw_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440',
     'category' => 'lifestyle',
     'brand' => 'New Balance',
+    'size' => '["5","5.5","6","6.5","7","7.5","8","8.5","9","9.5","10"]',
+    'color' => '[{"id":1,"color_name":"White with Silver Metallic","color_code":"#F5F5F5","image_url":"https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/u530hfw_nb_02_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","additional_images":["https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/u530hfw_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/u530hfw_nb_03_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440","https:\\/\\/nb.scene7.com\\/is\\/image\\/NB\\/u530hfw_nb_04_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440"],"videos":[]}]',
     'sku' => 'U530HFW',
     'stock_quantity' => 50,
     'is_active' => 1,
@@ -105,6 +143,13 @@ class RealProductsSeeder extends Seeder
     'discount_percentage' => NULL,
     'original_price' => NULL,
     'slug' => NULL,
+    'dimensions' => NULL,
+    'weight' => NULL,
+    'tags' => NULL,
+    'meta_title' => NULL,
+    'meta_description' => NULL,
+    'care_instructions' => NULL,
+    'material' => NULL,
     'created_at' => '2025-10-15 21:53:44',
     'updated_at' => '2025-10-15 21:53:44',
   ),
@@ -116,18 +161,27 @@ class RealProductsSeeder extends Seeder
     'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/1877a5d318d14c33a6a0a5f87df683e2_9366/JS1418_01_00_standard.jpg',
     'category' => 'indoor',
     'brand' => 'Adidas',
-    'sku' => 'SKU-68f2954dca3bd',
+    'size' => '["35","36","37","38","39","40","41","42"]',
+    'color' => '[{"id":1,"color_name":"Sand Strata Preloved Brown Gum","color_code":"#D2B48C","image_url":"https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/1877a5d318d14c33a6a0a5f87df683e2_9366\\/JS1418_01_00_standard.jpg","additional_images":["https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/88ca5abbba104b5e955e14f2ac9a9ea9_9366\\/JS1418_05_standard.jpg","https:\\/\\/assets.adidas.com\\/images\\/w_1880,f_auto,q_auto\\/0d38623959844634b5578de6e6eedbef_9366\\/JS1418_04_standard.jpg"],"videos":["https:\\/\\/assets.adidas.com\\/videos\\/ar_1,w_720,c_fill,q_auto,f_auto\\/6036207f7ea440fab5b6359b61422e0d_d98c\\/JS1418_HM51.mp4"]}]',
+    'sku' => 'SKU-68f297296515a',
     'stock_quantity' => 100,
     'is_active' => 1,
     'featured' => 1,
     'discount_percentage' => NULL,
     'original_price' => NULL,
     'slug' => NULL,
+    'dimensions' => NULL,
+    'weight' => NULL,
+    'tags' => NULL,
+    'meta_title' => NULL,
+    'meta_description' => NULL,
+    'care_instructions' => NULL,
+    'material' => NULL,
     'created_at' => '2025-10-16 09:49:24',
     'updated_at' => '2025-10-16 09:49:24',
   ),
 );
-        
+
         // Products Kids Data (6 products)
         $productsKids = array (
   0 => 
@@ -137,7 +191,7 @@ class RealProductsSeeder extends Seeder
     'price' => '185.00',
     'original_price' => NULL,
     'image_url' => 'https://nb.scene7.com/is/image/NB/m990gl6_nb_05_i?$pdpflexf22x$&qlt=80&fmt=webp&wid=880&hei=880',
-    'sku' => 'SKU-68f2954dca3ca',
+    'sku' => 'SKU-68f2972965163',
     'stock_quantity' => 150,
     'category_id' => 3,
     'brand_id' => NULL,
@@ -217,7 +271,7 @@ class RealProductsSeeder extends Seeder
     'price' => '85.00',
     'original_price' => NULL,
     'image_url' => 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/723e321ebd8b48bdbbf6b00135b9ed7b_9366/JI3163_01_00_standard.jpg',
-    'sku' => 'SKU-68f2954dca3da',
+    'sku' => 'SKU-68f297296516d',
     'stock_quantity' => 50,
     'category_id' => 3,
     'brand_id' => NULL,
@@ -227,7 +281,7 @@ class RealProductsSeeder extends Seeder
     'updated_at' => '2025-10-16 13:12:01',
   ),
 );
-        
+
         // Insert products_women
         if (Schema::hasTable('products_women') && count($productsWomen) > 0) {
             echo "📝 Seeding products_women...\n";
@@ -238,7 +292,7 @@ class RealProductsSeeder extends Seeder
                 echo "❌ Error seeding products_women: " . $e->getMessage() . "\n";
             }
         }
-        
+
         // Insert products_kids
         if (Schema::hasTable('products_kids') && count($productsKids) > 0) {
             echo "📝 Seeding products_kids...\n";
@@ -249,9 +303,9 @@ class RealProductsSeeder extends Seeder
                 echo "❌ Error seeding products_kids: " . $e->getMessage() . "\n";
             }
         }
-        
+
         echo "⚠️ Skipping products_men (table only has id and timestamps)\n";
-        
+
         echo "🎉 Real products seeding completed!\n";
         echo "📊 Summary: Women=" . count($productsWomen) . ", Kids=" . count($productsKids) . "\n";
     }
