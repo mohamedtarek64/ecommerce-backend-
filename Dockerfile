@@ -52,4 +52,4 @@ RUN php artisan config:clear \
 EXPOSE 8000
 
 # Start command with migration and seeding
-CMD php artisan config:clear && php artisan cache:clear && echo "=== Starting Migration Process ===" && sleep 10 && echo "=== Database Connection Test ===" && php artisan migrate:status && echo "=== Running Migration ===" && php artisan migrate:fresh --force && echo "=== Migration Complete ===" && php artisan migrate:status && echo "=== Running Seeder ===" && php artisan db:seed --force && echo "=== Starting Server ===" && exec php -S 0.0.0.0:${PORT:-8000} -t public
+CMD php artisan config:clear && php artisan cache:clear && echo "=== Starting Migration Process ===" && sleep 10 && echo "=== Database Connection Test ===" && php artisan migrate:status && echo "=== Running Migration ===" && php artisan migrate:fresh --force && echo "=== Migration Complete ===" && php artisan migrate:status && echo "=== Running Seeder ===" && php artisan db:seed --force && echo "=== Starting Server ===" && exec php -S 0.0.0.0:8000 -t public
