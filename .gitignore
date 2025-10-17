@@ -19,3 +19,4 @@ yarn-error.log
 Thumbs.db
 /bootstrap/cache/*.php
 stripe-config.example.env
+stripe-config.env
