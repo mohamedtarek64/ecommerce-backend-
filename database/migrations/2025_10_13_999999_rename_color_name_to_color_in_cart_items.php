@@ -18,7 +18,7 @@ return new class extends Migration
         } elseif (!Schema::hasColumn('cart_items', 'color')) {
             // Add color column if it doesn't exist
             Schema::table('cart_items', function (Blueprint $table) {
-                $table->string('color')->nullable()->after('quantity');
+                $table->string('color')->nullable();
             });
         }
     }

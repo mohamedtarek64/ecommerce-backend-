@@ -18,7 +18,7 @@ return new class extends Migration
                 Schema::table($table, function (Blueprint $table) {
                     // Add sku column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'sku')) {
-                        $table->string('sku')->unique()->nullable()->after('slug');
+                        $table->string('sku')->unique()->nullable();
                     }
                 });
             }

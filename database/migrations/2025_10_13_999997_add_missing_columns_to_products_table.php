@@ -15,22 +15,22 @@ return new class extends Migration
             Schema::table('products', function (Blueprint $table) {
                 // Add additional_images column if not exists
                 if (!Schema::hasColumn('products', 'additional_images')) {
-                    $table->json('additional_images')->nullable()->after('images');
+                    $table->json('additional_images')->nullable();
                 }
 
                 // Add videos column if not exists
                 if (!Schema::hasColumn('products', 'videos')) {
-                    $table->json('videos')->nullable()->after('additional_images');
+                    $table->json('videos')->nullable();
                 }
 
                 // Add rating column if not exists
                 if (!Schema::hasColumn('products', 'rating')) {
-                    $table->decimal('rating', 3, 2)->default(0)->after('is_featured');
+                    $table->decimal('rating', 3, 2)->default(0);
                 }
 
                 // Add reviews_count column if not exists
                 if (!Schema::hasColumn('products', 'reviews_count')) {
-                    $table->integer('reviews_count')->default(0)->after('rating');
+                    $table->integer('reviews_count')->default(0);
                 }
             });
         }

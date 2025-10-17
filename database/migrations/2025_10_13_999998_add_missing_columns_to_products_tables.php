@@ -18,47 +18,47 @@ return new class extends Migration
                 Schema::table($table, function (Blueprint $table) {
                     // Add slug column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'slug')) {
-                        $table->string('slug')->unique()->nullable()->after('name');
+                        $table->string('slug')->unique()->nullable();
                     }
 
                     // Add original_price column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'original_price')) {
-                        $table->decimal('original_price', 10, 2)->nullable()->after('price');
+                        $table->decimal('original_price', 10, 2)->nullable();
                     }
 
                     // Add subcategory column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'subcategory')) {
-                        $table->string('subcategory')->nullable()->after('category');
+                        $table->string('subcategory')->nullable();
                     }
 
                     // Add stock_quantity column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'stock_quantity')) {
-                        $table->integer('stock_quantity')->default(0)->after('stock');
+                        $table->integer('stock_quantity')->default(0);
                     }
 
                     // Add rating column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'rating')) {
-                        $table->decimal('rating', 3, 2)->default(0)->after('is_active');
+                        $table->decimal('rating', 3, 2)->default(0);
                     }
 
                     // Add reviews_count column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'reviews_count')) {
-                        $table->integer('reviews_count')->default(0)->after('rating');
+                        $table->integer('reviews_count')->default(0);
                     }
 
                     // Add images column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'images')) {
-                        $table->json('images')->nullable()->after('image_url');
+                        $table->json('images')->nullable();
                     }
 
                     // Add additional_images column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'additional_images')) {
-                        $table->json('additional_images')->nullable()->after('images');
+                        $table->json('additional_images')->nullable();
                     }
 
                     // Add videos column if not exists
                     if (!Schema::hasColumn($table->getTable(), 'videos')) {
-                        $table->json('videos')->nullable()->after('additional_images');
+                        $table->json('videos')->nullable();
                     }
                 });
             }

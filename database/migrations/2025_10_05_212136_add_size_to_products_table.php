@@ -15,22 +15,22 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             // Add missing columns first
-            $table->decimal('original_price', 10, 2)->nullable()->after('price');
-            $table->integer('discount_percentage')->nullable()->after('original_price');
-            $table->string('material')->nullable()->after('description');
-            $table->text('care_instructions')->nullable()->after('material');
-            $table->string('origin')->nullable()->after('care_instructions');
-            $table->json('colors')->nullable()->after('images');
-            $table->json('sizes')->nullable()->after('colors');
-            $table->string('category')->nullable()->after('origin');
-            $table->string('brand')->nullable()->after('category');
-            $table->boolean('is_active')->default(true)->after('featured');
-            $table->boolean('is_featured')->default(false)->after('is_active');
+            $table->decimal('original_price', 10, 2)->nullable();
+            $table->integer('discount_percentage')->nullable();
+            $table->string('material')->nullable();
+            $table->text('care_instructions')->nullable();
+            $table->string('origin')->nullable();
+            $table->json('colors')->nullable();
+            $table->json('sizes')->nullable();
+            $table->string('category')->nullable();
+            $table->string('brand')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_featured')->default(false);
 
             // Add size-related columns
-            $table->string('size')->nullable()->after('sizes');
-            $table->integer('stock_quantity')->default(0)->after('size');
-            $table->boolean('is_available')->default(true)->after('stock_quantity');
+            $table->string('size')->nullable();
+            $table->integer('stock_quantity')->default(0);
+            $table->boolean('is_available')->default(true);
         });
     }
 

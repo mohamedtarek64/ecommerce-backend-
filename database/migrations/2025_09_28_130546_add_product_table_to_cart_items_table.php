@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('cart_items', function (Blueprint $table) {
-            $table->string('product_table')->default('products_women')->after('product_id');
+            $table->string('product_table')->default('products_women');
             $table->index(['user_id', 'product_table']);
         });
     }

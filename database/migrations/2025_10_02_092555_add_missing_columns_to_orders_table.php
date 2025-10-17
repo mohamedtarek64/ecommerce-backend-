@@ -15,18 +15,18 @@ return new class extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             // Add shipping method and cost
-            $table->string('shipping_method')->nullable()->after('payment_status');
-            $table->decimal('shipping_cost', 10, 2)->default(0)->after('shipping_method');
-            $table->decimal('subtotal', 10, 2)->after('shipping_cost');
-            $table->decimal('tax_amount', 10, 2)->default(0)->after('subtotal');
+            $table->string('shipping_method')->nullable();
+            $table->decimal('shipping_cost', 10, 2)->default(0);
+            $table->decimal('subtotal', 10, 2);
+            $table->decimal('tax_amount', 10, 2)->default(0);
 
             // Add customer contact info
-            $table->string('customer_email')->nullable()->after('tax_amount');
-            $table->string('customer_phone')->nullable()->after('customer_email');
+            $table->string('customer_email')->nullable();
+            $table->string('customer_phone')->nullable();
 
             // Add Stripe payment info
-            $table->string('stripe_payment_intent_id')->nullable()->after('customer_phone');
-            $table->string('stripe_charge_id')->nullable()->after('stripe_payment_intent_id');
+            $table->string('stripe_payment_intent_id')->nullable();
+            $table->string('stripe_charge_id')->nullable();
         });
     }
 

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('product_colors', function (Blueprint $table) {
-            $table->integer('sort_order')->default(0)->after('is_available');
+            $table->integer('sort_order')->default(0);
             $table->index('sort_order');
         });
     }
