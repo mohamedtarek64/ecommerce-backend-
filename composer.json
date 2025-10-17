@@ -31,6 +31,7 @@
         "laravel/sail": "^1.46",
         "mockery/mockery": "^1.4.4",
         "phpunit/phpunit": "^9.5",
+        "spatie/flare-client-php": "^1.10",
         "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
