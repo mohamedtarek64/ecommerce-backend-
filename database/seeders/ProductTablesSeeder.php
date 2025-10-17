@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ProductTablesSeeder extends Seeder
 {
@@ -12,227 +13,115 @@ class ProductTablesSeeder extends Seeder
      */
     public function run(): void
     {
-        echo "🌱 Seeding Products Tables...\n";
+        echo "🌱 Seeding Products Tables from main products table...\n";
 
-        // Sample data for products_kids
-        $kidsProducts = [
-            [
-                'title' => 'Nike Air Max 270 Kids',
-                'description' => 'High-performance running shoes with Air Max technology for kids.',
-                'price' => 89.99,
-                'original_price' => 99.99,
-                'discount_percentage' => 10,
-                'sku' => 'SKU-NIKE-KIDS-001',
-                'brand' => 'Nike',
-                'category' => 'kids',
-                'material' => 'Mesh Upper, Rubber Sole',
-                'care_instructions' => 'Clean with damp cloth, air dry',
-                'origin' => 'Made in Vietnam',
-                'colors' => json_encode([
-                    ['name' => 'Black', 'color' => 'bg-gray-900'],
-                    ['name' => 'White', 'color' => 'bg-white'],
-                    ['name' => 'Red', 'color' => 'bg-red-600']
-                ]),
-                'sizes' => json_encode(['28', '29', '30', '31', '32', '33', '34', '35', '36']),
-                'images' => json_encode([
-                    'https://via.placeholder.com/400x400/FF0000/FFFFFF?text=Nike+Kids',
-                    'https://via.placeholder.com/400x400/0000FF/FFFFFF?text=Nike+Kids+2'
-                ]),
-                'is_active' => 1,
-                'is_featured' => 1,
-                'stock_quantity' => 25,
-                'is_available' => 1,
-                'rating' => 4.5,
-                'reviews_count' => 12,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'title' => 'Adidas Ultraboost Kids',
-                'description' => 'Revolutionary running shoes with Boost technology for kids.',
-                'price' => 79.99,
-                'original_price' => 89.99,
-                'discount_percentage' => 11,
-                'sku' => 'SKU-ADIDAS-KIDS-001',
-                'brand' => 'Adidas',
-                'category' => 'kids',
-                'material' => 'Primeknit Upper, Boost Midsole',
-                'care_instructions' => 'Machine wash cold, air dry',
-                'origin' => 'Made in Germany',
-                'colors' => json_encode([
-                    ['name' => 'Black', 'color' => 'bg-gray-900'],
-                    ['name' => 'White', 'color' => 'bg-white'],
-                    ['name' => 'Blue', 'color' => 'bg-blue-600']
-                ]),
-                'sizes' => json_encode(['28', '29', '30', '31', '32', '33', '34', '35', '36']),
-                'images' => json_encode([
-                    'https://via.placeholder.com/400x400/000000/FFFFFF?text=Adidas+Kids',
-                    'https://via.placeholder.com/400x400/333333/FFFFFF?text=Adidas+Kids+2'
-                ]),
-                'is_active' => 1,
-                'is_featured' => 0,
-                'stock_quantity' => 20,
-                'is_available' => 1,
-                'rating' => 4.2,
-                'reviews_count' => 8,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
-        ];
+        // Get all products from main products table
+        $allProducts = DB::table('products')->get();
 
-        // Sample data for products_men
-        $menProducts = [
-            [
-                'title' => 'Nike Air Max 270 Men',
-                'description' => 'High-performance running shoes with Air Max technology for men.',
-                'price' => 149.99,
-                'original_price' => 179.99,
-                'discount_percentage' => 17,
-                'sku' => 'SKU-NIKE-MEN-001',
-                'brand' => 'Nike',
-                'category' => 'men',
-                'material' => 'Mesh Upper, Rubber Sole',
-                'care_instructions' => 'Clean with damp cloth, air dry',
-                'origin' => 'Made in Vietnam',
-                'colors' => json_encode([
-                    ['name' => 'Black', 'color' => 'bg-gray-900'],
-                    ['name' => 'White', 'color' => 'bg-white'],
-                    ['name' => 'Gray', 'color' => 'bg-gray-600']
-                ]),
-                'sizes' => json_encode(['40', '41', '42', '43', '44', '45', '46', '47', '48']),
-                'images' => json_encode([
-                    'https://via.placeholder.com/400x400/FF0000/FFFFFF?text=Nike+Men',
-                    'https://via.placeholder.com/400x400/0000FF/FFFFFF?text=Nike+Men+2'
-                ]),
-                'is_active' => 1,
-                'is_featured' => 1,
-                'stock_quantity' => 35,
-                'is_available' => 1,
-                'rating' => 4.7,
-                'reviews_count' => 25,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'title' => 'Adidas Ultraboost Men',
-                'description' => 'Revolutionary running shoes with Boost midsole technology for men.',
-                'price' => 189.99,
-                'original_price' => 219.99,
-                'discount_percentage' => 14,
-                'sku' => 'SKU-ADIDAS-MEN-001',
-                'brand' => 'Adidas',
-                'category' => 'men',
-                'material' => 'Primeknit Upper, Boost Midsole',
-                'care_instructions' => 'Machine wash cold, air dry',
-                'origin' => 'Made in Germany',
-                'colors' => json_encode([
-                    ['name' => 'Black', 'color' => 'bg-gray-900'],
-                    ['name' => 'White', 'color' => 'bg-white'],
-                    ['name' => 'Blue', 'color' => 'bg-blue-600']
-                ]),
-                'sizes' => json_encode(['40', '41', '42', '43', '44', '45', '46', '47', '48']),
-                'images' => json_encode([
-                    'https://via.placeholder.com/400x400/000000/FFFFFF?text=Adidas+Men',
-                    'https://via.placeholder.com/400x400/333333/FFFFFF?text=Adidas+Men+2'
-                ]),
-                'is_active' => 1,
-                'is_featured' => 0,
-                'stock_quantity' => 30,
-                'is_available' => 1,
-                'rating' => 4.8,
-                'reviews_count' => 32,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
-        ];
+        if ($allProducts->isEmpty()) {
+            echo "⚠️ No products found in main products table. Skipping...\n";
+            return;
+        }
 
-        // Sample data for products_women
-        $womenProducts = [
-            [
-                'title' => 'Nike Air Max 270 Women',
-                'description' => 'High-performance running shoes with Air Max technology for women.',
-                'price' => 129.99,
-                'original_price' => 159.99,
-                'discount_percentage' => 19,
-                'sku' => 'SKU-NIKE-WOMEN-001',
-                'brand' => 'Nike',
-                'category' => 'women',
-                'material' => 'Mesh Upper, Rubber Sole',
-                'care_instructions' => 'Clean with damp cloth, air dry',
-                'origin' => 'Made in Vietnam',
-                'colors' => json_encode([
-                    ['name' => 'Pink', 'color' => 'bg-pink-400'],
-                    ['name' => 'White', 'color' => 'bg-white'],
-                    ['name' => 'Purple', 'color' => 'bg-purple-600']
-                ]),
-                'sizes' => json_encode(['36', '37', '38', '39', '40', '41', '42', '43']),
-                'images' => json_encode([
-                    'https://via.placeholder.com/400x400/FF69B4/FFFFFF?text=Nike+Women',
-                    'https://via.placeholder.com/400x400/FF1493/FFFFFF?text=Nike+Women+2'
-                ]),
-                'is_active' => 1,
-                'is_featured' => 1,
-                'stock_quantity' => 28,
-                'is_available' => 1,
-                'rating' => 4.6,
-                'reviews_count' => 18,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'title' => 'Puma RS-X Women',
-                'description' => 'Bold and futuristic sneakers with chunky sole design for women.',
-                'price' => 99.99,
-                'original_price' => 119.99,
-                'discount_percentage' => 17,
-                'sku' => 'SKU-PUMA-WOMEN-001',
-                'brand' => 'Puma',
-                'category' => 'women',
-                'material' => 'Textile Upper, Rubber Sole',
-                'care_instructions' => 'Clean with damp cloth, air dry',
-                'origin' => 'Made in China',
-                'colors' => json_encode([
-                    ['name' => 'Pink', 'color' => 'bg-pink-400'],
-                    ['name' => 'White', 'color' => 'bg-white'],
-                    ['name' => 'Black', 'color' => 'bg-gray-900']
-                ]),
-                'sizes' => json_encode(['36', '37', '38', '39', '40', '41', '42', '43']),
-                'images' => json_encode([
-                    'https://via.placeholder.com/400x400/FF6B35/FFFFFF?text=Puma+Women',
-                    'https://via.placeholder.com/400x400/2C3E50/FFFFFF?text=Puma+Women+2'
-                ]),
-                'is_active' => 1,
-                'is_featured' => 1,
-                'stock_quantity' => 22,
-                'is_available' => 1,
-                'rating' => 4.4,
-                'reviews_count' => 15,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
-        ];
+        echo "📊 Found " . count($allProducts) . " products in main table\n";
+
+        // Prepare data for each category table
+        $kidsProducts = [];
+        $menProducts = [];
+        $womenProducts = [];
+
+        foreach ($allProducts as $product) {
+            $category = strtolower($product->category ?? '');
+
+            // Decode images to get first image
+            $images = json_decode($product->images, true);
+            $firstImage = is_array($images) && count($images) > 0 ? $images[0] : null;
+
+            if ($category === 'kids') {
+                // products_kids schema: id, name, description, price, original_price, image_url, sku, stock_quantity, category_id, brand_id, is_active, is_featured, timestamps
+                $kidsProducts[] = [
+                    'name' => $product->name,
+                    'description' => $product->description,
+                    'price' => $product->price,
+                    'original_price' => $product->original_price,
+                    'image_url' => $firstImage,
+                    'sku' => $product->sku,
+                    'stock_quantity' => $product->stock_quantity ?? 0,
+                    'category_id' => $product->category_id,
+                    'brand_id' => null, // brand_id might not exist in main table
+                    'is_active' => $product->is_active ?? 1,
+                    'is_featured' => $product->is_featured ?? 0,
+                    'created_at' => $product->created_at ?? now(),
+                    'updated_at' => $product->updated_at ?? now()
+                ];
+            } elseif ($category === 'women') {
+                // products_women schema: name, price, description, image_url, category, brand, size, color, material, is_active, stock_quantity, sku, weight, dimensions, care_instructions, tags, meta_title, meta_description, slug, featured, discount_percentage, original_price, timestamps
+                $womenProducts[] = [
+                    'name' => $product->name,
+                    'description' => $product->description,
+                    'price' => $product->price,
+                    'original_price' => $product->original_price,
+                    'discount_percentage' => $product->discount_percentage,
+                    'image_url' => $firstImage,
+                    'sku' => $product->sku,
+                    'brand' => $product->brand ?? 'Unknown',
+                    'category' => $category,
+                    'material' => $product->material,
+                    'care_instructions' => $product->care_instructions,
+                    'is_active' => $product->is_active ?? 1,
+                    'featured' => $product->is_featured ?? 0,
+                    'stock_quantity' => $product->stock_quantity ?? 0,
+                    'slug' => $product->slug ?? null,
+                    'created_at' => $product->created_at ?? now(),
+                    'updated_at' => $product->updated_at ?? now()
+                ];
+            }
+            // Note: products_men table only has id and timestamps, so we skip it
+        }
+
+        // products_men table only has id and timestamps, so we skip it
+        $menProducts = [];
 
         // Insert data into products_kids
-        if (DB::getSchemaBuilder()->hasTable('products_kids')) {
+        if (Schema::hasTable('products_kids') && count($kidsProducts) > 0) {
             echo "📝 Seeding products_kids...\n";
-            DB::table('products_kids')->insert($kidsProducts);
-            echo "✅ Added " . count($kidsProducts) . " kids products\n";
+            try {
+                DB::table('products_kids')->insert($kidsProducts);
+                echo "✅ Added " . count($kidsProducts) . " kids products\n";
+            } catch (\Exception $e) {
+                echo "❌ Error seeding products_kids: " . $e->getMessage() . "\n";
+            }
+        } else {
+            echo "⚠️ Skipping products_kids (no data for kids category)\n";
         }
 
         // Insert data into products_men
-        if (DB::getSchemaBuilder()->hasTable('products_men')) {
+        if (Schema::hasTable('products_men') && count($menProducts) > 0) {
             echo "📝 Seeding products_men...\n";
-            DB::table('products_men')->insert($menProducts);
-            echo "✅ Added " . count($menProducts) . " men products\n";
+            try {
+                DB::table('products_men')->insert($menProducts);
+                echo "✅ Added " . count($menProducts) . " men products\n";
+            } catch (\Exception $e) {
+                echo "❌ Error seeding products_men: " . $e->getMessage() . "\n";
+            }
+        } else {
+            echo "⚠️ Skipping products_men (table is empty or no data available)\n";
         }
 
         // Insert data into products_women
-        if (DB::getSchemaBuilder()->hasTable('products_women')) {
+        if (Schema::hasTable('products_women') && count($womenProducts) > 0) {
             echo "📝 Seeding products_women...\n";
-            DB::table('products_women')->insert($womenProducts);
-            echo "✅ Added " . count($womenProducts) . " women products\n";
+            try {
+                DB::table('products_women')->insert($womenProducts);
+                echo "✅ Added " . count($womenProducts) . " women products\n";
+            } catch (\Exception $e) {
+                echo "❌ Error seeding products_women: " . $e->getMessage() . "\n";
+            }
+        } else {
+            echo "⚠️ Skipping products_women (no data for women category)\n";
         }
 
         echo "🎉 Product tables seeding completed!\n";
+        echo "📊 Summary: Kids=" . count($kidsProducts) . ", Men=" . count($menProducts) . ", Women=" . count($womenProducts) . "\n";
     }
 }
