@@ -8,7 +8,7 @@ php artisan cache:clear
 echo "=== Waiting for Database ==="
 sleep 10
 
-echo "=== Database Connection Test ===" 
+echo "=== Database Connection Test ==="
 php artisan migrate:status || true
 
 echo "=== Running Migration ==="
@@ -29,4 +29,3 @@ echo "=== Export Complete ==="
 
 echo "=== Starting Server ==="
 exec php artisan serve --host=0.0.0.0 --port=$PORT
-
