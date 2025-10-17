@@ -5,7 +5,8 @@ nixPkgs = ["php81", "php81Packages.composer"]
 cmds = [
     "mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache",
     "chmod -R 777 storage bootstrap/cache",
-    "composer install --no-dev --optimize-autoloader"
+    "composer install --no-dev --optimize-autoloader",
+    "chmod +x start.sh"
 ]
 
 [phases.build]
@@ -15,5 +16,4 @@ cmds = [
 ]
 
 [start]
-cmd = "php artisan config:clear && php artisan cache:clear && echo '=== Starting Migration ===' && php artisan migrate:fresh --force && echo '=== Migration Complete ===' && echo '=== Starting Seeding ===' && php artisan db:seed --force && echo '=== Seeding Complete ===' && echo '=== Starting Export ===' && php export_railway_data.php && echo '=== Export Complete ===' && echo '=== Starting Server ===' && php artisan serve --host=0.0.0.0 --port=$PORT"
-
+cmd = "./start.sh"
