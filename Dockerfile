@@ -1,5 +1,5 @@
 # Use PHP 8.1
-FROM php:8.1-fpm
+FROM php:8.1-cli
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -23,37 +23,26 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy composer files
-COPY composer.json composer.lock ./
-
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader --no-scripts
-
 # Copy application code
 COPY . .
 
-# Create necessary directories
+# Install dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Create necessary directories and set permissions
 RUN mkdir -p storage/logs \
     && mkdir -p storage/framework/cache \
     && mkdir -p storage/framework/sessions \
     && mkdir -p storage/framework/views \
-    && mkdir -p bootstrap/cache
-
-# Set permissions
-RUN chmod -R 777 storage bootstrap/cache
-
-# Clear caches
-RUN php artisan config:clear \
-    && php artisan cache:clear \
-    && php artisan route:clear \
-    && php artisan view:clear
-
-# Expose port
-EXPOSE 8000
+    && mkdir -p bootstrap/cache \
+    && chmod -R 777 storage bootstrap/cache
 
 # Copy and make start script executable
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Start command with migration and seeding
-CMD ["/start.sh"]
+# Expose port
+EXPOSE 8000
+
+# Start command
+CMD ["/bin/bash", "/start.sh"]
