@@ -52,6 +52,22 @@ Route::prefix('api')->group(function () {
             'timestamp' => now()->toISOString()
         ]);
     });
+    
+    Route::get('/user', function () {
+        return response()->json([
+            'message' => 'User endpoint',
+            'status' => 'active',
+            'user' => null
+        ]);
+    });
+    
+    Route::get('/products', function () {
+        return response()->json([
+            'message' => 'Products endpoint',
+            'status' => 'active',
+            'products' => []
+        ]);
+    });
 });
 
 Route::get('/test-route', function () {
