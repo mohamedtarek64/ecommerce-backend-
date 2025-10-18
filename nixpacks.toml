@@ -2,7 +2,7 @@
 nixPkgs = ["php81", "php81Packages.composer"]
 
 [build]
-buildHash = "force-php81-v3"
+buildHash = "force-php81-v5"
 
 [phases.install]
 cmds = [
