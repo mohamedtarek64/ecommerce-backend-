@@ -125,5 +125,3 @@ class ProductTablesSeeder extends Seeder
         echo "📊 Summary: Kids=" . count($kidsProducts) . ", Men=" . count($menProducts) . ", Women=" . count($womenProducts) . "\n";
     }
 }
-
-

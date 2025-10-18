@@ -19,20 +19,21 @@ return [
 
     'allowed_methods' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 
-    'allowed_origins' => env('CORS_ALLOWED_ORIGINS')
-        ? explode(',', env('CORS_ALLOWED_ORIGINS'))
-        : [
-            'http://localhost:3000',
-            'http://localhost:8080',
-            'http://127.0.0.1:3000',
-            'http://127.0.0.1:8080',
-            'http://localhost:3001',
-            'http://127.0.0.1:3001',
-            'http://localhost:5173',  // Vite default port
-            'http://127.0.0.1:5173',  // Vite default port
-            'http://localhost:4000',  // Alternative frontend port
-            'http://127.0.0.1:4000',  // Alternative frontend port
-        ],
+    'allowed_origins' => [
+        'https://solomate-ec557z.vercel.app',
+        'https://solomate-ec557z-*.vercel.app',
+        'https://solomate-ec557z-git-main-mohamedtarek64.vercel.app',
+        'http://localhost:3000',
+        'http://localhost:8080',
+        'http://127.0.0.1:3000',
+        'http://127.0.0.1:8080',
+        'http://localhost:3001',
+        'http://127.0.0.1:3001',
+        'http://localhost:5173',  // Vite default port
+        'http://127.0.0.1:5173',  // Vite default port
+        'http://localhost:4000',  // Alternative frontend port
+        'http://127.0.0.1:4000',  // Alternative frontend port
+    ],
 
     'allowed_origins_patterns' => [],
 

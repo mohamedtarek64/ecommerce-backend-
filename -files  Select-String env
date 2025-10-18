@@ -1,0 +1,33 @@
+[33mcommit 7982eb5db9bf854ff9125f6b64301a808d756113[m
+Author: Mohamed Elkenany <mohamed202202632@gmail.com>
+Date:   Fri Oct 17 23:44:54 2025 +0300
+
+    Add Stripe configuration files and update .gitignore
+
+.gitignore
+.php-version
+CONNECT-TO-RAILWAY-DB.md
+Dockerfile.backup
+RAILWAY-DEPLOY-INSTRUCTIONS.md
+RAILWAY-ENV-VARIABLES.md
+RAILWAY-MANUAL-SETUP.md
+check_railway_data.php
+create_compatible_seeder.php
+database/seeders/ProductTablesSeeder.php
+database_exports/database_export_2025-10-17_11-01-04.json
+database_exports/export_summary_2025-10-17_11-01-04.txt
+env.production.example
+export_railway_data.php
+fix_color_format_wx608v5.php
+fix_products_seeding.php
+fix_products_seeding_v2.php
+import_to_railway.php
+railway.json
+railway_export_commands.md
+railway_export_guide.md
+railway_export_post_deploy.php
+seed_products_tables.php
+start.sh
+test-api.php
+test_api_connection.php
+ultimate_final_summary.php
