@@ -37,8 +37,8 @@ class ProductController extends Controller
             return Cache::remember($cacheKey, 300, function () use ($table, $limit, $offset, $category) {
                 // Build query
                 $query = DB::table($table)
-                    ->select('id', 'name', 'price', 'image_url', 'category', 'stock_quantity', 'is_active')
-                    ->where('is_active', 1);
+                    ->select('id', 'name', 'price', 'images', 'category', 'stock', 'featured')
+                    ->where('featured', '>=', 0);
 
                 // Add category filter if provided
                 if ($category) {
