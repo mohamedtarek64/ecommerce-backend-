@@ -10,6 +10,8 @@ cmds = [
 
 [phases.build]
 cmds = [
+    "echo 'PHP Version:' && php --version",
+    "echo 'Setting PHP 8.1' && export PHP_VERSION=8.1",
     "php artisan config:cache",
     "php artisan route:cache"
 ]
