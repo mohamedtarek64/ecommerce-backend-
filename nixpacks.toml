@@ -1,6 +1,9 @@
 [phases.setup]
 nixPkgs = ["php81", "php81Packages.composer"]
 
+[build]
+buildHash = "force-php81-v3"
+
 [phases.install]
 cmds = [
     "mkdir -p bootstrap/cache storage/logs storage/framework/cache storage/framework/sessions storage/framework/views",
@@ -10,10 +13,11 @@ cmds = [
 
 [phases.build]
 cmds = [
+    "echo '=== BUILD STARTED ===' && date",
     "echo 'PHP Version:' && php --version",
-    "echo 'Setting PHP 8.1' && export PHP_VERSION=8.1",
     "php artisan config:cache",
-    "php artisan route:cache"
+    "php artisan route:cache",
+    "echo '=== BUILD COMPLETED ===' && date"
 ]
 
 [start]
