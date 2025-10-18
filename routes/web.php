@@ -31,6 +31,43 @@ Route::get('/', function () {
     ]);
 });
 
+// API Routes as root routes
+Route::get('/api', function () {
+    return response()->json([
+        'message' => 'API Routes Available',
+        'status' => 'active',
+        'available_routes' => [
+            'GET /api/health' => 'Health check',
+            'GET /api/products' => 'Get products',
+            'POST /api/auth/login' => 'User login',
+            'POST /api/auth/register' => 'User registration'
+        ]
+    ]);
+});
+
+Route::get('/api/user', function () {
+    return response()->json([
+        'message' => 'User endpoint',
+        'status' => 'active',
+        'user' => null
+    ]);
+});
+
+Route::get('/api/products', function () {
+    return response()->json([
+        'message' => 'Products endpoint',
+        'status' => 'active',
+        'products' => []
+    ]);
+});
+
+Route::get('/api/health', function () {
+    return response()->json([
+        'status' => 'healthy',
+        'timestamp' => now()->toISOString()
+    ]);
+});
+
 // API Routes - Redirect to actual API routes
 Route::prefix('api')->group(function () {
     Route::get('/', function () {
@@ -45,14 +82,14 @@ Route::prefix('api')->group(function () {
             ]
         ]);
     });
-    
+
     Route::get('/health', function () {
         return response()->json([
             'status' => 'healthy',
             'timestamp' => now()->toISOString()
         ]);
     });
-    
+
     Route::get('/user', function () {
         return response()->json([
             'message' => 'User endpoint',
@@ -60,7 +97,7 @@ Route::prefix('api')->group(function () {
             'user' => null
         ]);
     });
-    
+
     Route::get('/products', function () {
         return response()->json([
             'message' => 'Products endpoint',
