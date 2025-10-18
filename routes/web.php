@@ -31,6 +31,29 @@ Route::get('/', function () {
     ]);
 });
 
+// API Routes - Redirect to actual API routes
+Route::prefix('api')->group(function () {
+    Route::get('/', function () {
+        return response()->json([
+            'message' => 'API Routes Available',
+            'status' => 'active',
+            'available_routes' => [
+                'GET /api/health' => 'Health check',
+                'GET /api/products' => 'Get products',
+                'POST /api/auth/login' => 'User login',
+                'POST /api/auth/register' => 'User registration'
+            ]
+        ]);
+    });
+    
+    Route::get('/health', function () {
+        return response()->json([
+            'status' => 'healthy',
+            'timestamp' => now()->toISOString()
+        ]);
+    });
+});
+
 Route::get('/test-route', function () {
     return response()->json(['message' => 'Test route works']);
 });
