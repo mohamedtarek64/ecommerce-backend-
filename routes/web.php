@@ -32,8 +32,41 @@ Route::get('/', function () {
 });
 
 // API Routes as root routes
-// Import all API routes from api.php
-Route::prefix('api')->group(base_path('routes/api.php'));
+// API Routes - Direct implementation
+Route::get('/api/user', function () {
+    return response()->json([
+        'success' => true,
+        'message' => 'User endpoint working',
+        'user' => null
+    ]);
+});
+
+Route::get('/api/health', function () {
+    return response()->json([
+        'status' => 'healthy',
+        'timestamp' => now()->toISOString()
+    ]);
+});
+
+Route::get('/api/products', function () {
+    try {
+        $products = \DB::table('products_women')
+            ->select('id', 'name', 'price', 'images', 'category', 'stock', 'featured')
+            ->where('featured', '>=', 0)
+            ->limit(10)
+            ->get();
+            
+        return response()->json([
+            'success' => true,
+            'data' => $products
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Error: ' . $e->getMessage()
+        ], 500);
+    }
+});
 
 // API Routes - Redirect to actual API routes
 Route::prefix('api')->group(function () {
