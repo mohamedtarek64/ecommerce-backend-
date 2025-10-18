@@ -23,6 +23,7 @@ return [
         'https://solomate-ec557z.vercel.app',
         'https://solomate-ec557z-*.vercel.app',
         'https://solomate-ec557z-git-main-mohamedtarek64.vercel.app',
+        'https://solomate-ec557z-fyi0dx3yn-mohamed202202632-1630s-projects.vercel.app',
         'http://localhost:3000',
         'http://localhost:8080',
         'http://127.0.0.1:3000',
